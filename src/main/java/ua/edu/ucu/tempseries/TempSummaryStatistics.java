@@ -1,17 +1,17 @@
 package ua.edu.ucu.tempseries;
 
 public class TempSummaryStatistics {
-    private final double average_temp;
-    private final double deviation_temp;
-    private final double min_temp;
-    private final double max_temp;
+    private final double avgTemp;
+    private final double devTemp;
+    private final double minTemp;
+    private final double maxTemp;
 
 
-    public TempSummaryStatistics(double averageTemp, double devTemp, double minTemp, double maxTemp) {
-        this.average_temp = averageTemp;
-        this.deviation_temp = devTemp;
-        this.min_temp = minTemp;
-        this.max_temp = maxTemp;
+    public TempSummaryStatistics(double avgTemp, double devTemp, double minTemp, double maxTemp) {
+        this.avgTemp = avgTemp;
+        this.devTemp = devTemp;
+        this.minTemp = minTemp;
+        this.maxTemp = maxTemp;
     }
 
     @Override
@@ -20,19 +20,19 @@ public class TempSummaryStatistics {
                 +
                 "average_temperature="
                 +
-                average_temp
+                avgTemp
                 +
                 " | deviation_temperature="
                 +
-                deviation_temp
+                devTemp
                 +
                 " | min_temperature="
                 +
-                min_temp
+                minTemp
                 +
                 " | max_temperature="
                 +
-                max_temp
+                maxTemp
                 +
                 "}";
     }
