@@ -97,19 +97,19 @@ public class TemperatureSeriesAnalysis {
     }
 
     public double[] findTempsLessThen(double tempValue) {
-        if (size == 0){
+        if (size == 0) {
             throw new
                     IllegalArgumentException("Temperature Series is empty.");
         }
         int length = 0, index = 0;
-        for (double temp : temperatureSeries) {
+        for (double temp: temperatureSeries) {
             if (temp < tempValue) {
                 length++;
             }
         }
         double[] tempsLess = new double[length];
-        for (double temp : temperatureSeries){
-            if (temp < tempValue){
+        for (double temp : temperatureSeries) {
+            if (temp < tempValue) {
                 tempsLess[index] = temp;
                 index++;
             }
@@ -118,7 +118,7 @@ public class TemperatureSeriesAnalysis {
     }
 
     public double[] findTempsGreaterThen(double tempValue) {
-        if (size == 0){
+        if (size == 0) {
             throw new
                     IllegalArgumentException("Temperature Series is empty.");
         }
@@ -129,8 +129,8 @@ public class TemperatureSeriesAnalysis {
             }
         }
         double[] tempsGreater = new double[length];
-        for (double temp : temperatureSeries){
-            if (temp >= tempValue){
+        for (double temp : temperatureSeries) {
+            if (temp >= tempValue) {
                 tempsGreater[index] = temp;
                 index++;
             }
@@ -139,7 +139,7 @@ public class TemperatureSeriesAnalysis {
     }
 
     public TempSummaryStatistics summaryStatistics() {
-        if (size == 0){
+        if (size == 0) {
             throw new
                     IllegalArgumentException("Temperature Series is empty.");
         }
@@ -147,14 +147,14 @@ public class TemperatureSeriesAnalysis {
     }
 
     public int addTemps(double... temps) {
-        if (size == 0){
+        if (size == 0) {
             throw new
                     IllegalArgumentException("Temperature Series is empty.");
         }
-        for (double temp: temps){
-            if (temp < MIN_VALUE){
+        for (double temp: temps) {
+            if (temp < MIN_VALUE) {
                 throw new
-                        InputMismatchException("Temperature exceeds min bound.");
+                    InputMismatchException("Temperature exceeds min bound");
             }
         }
         int length = size, summary = 0;
@@ -163,7 +163,7 @@ public class TemperatureSeriesAnalysis {
         }
         double[] newTempSeries = new double[length];
         int index = 0;
-        for (double temp : temperatureSeries) {
+        for (double temp: temperatureSeries) {
             newTempSeries[index] = temp;
             summary += temp;
             index++;
