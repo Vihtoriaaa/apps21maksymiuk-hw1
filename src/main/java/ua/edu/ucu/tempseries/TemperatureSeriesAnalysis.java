@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 
 public class TemperatureSeriesAnalysis {
-    private static final int minTemp = -273;
+    private static final int MIN_VALUE = -273;
     private double[] temperatureSeries;
     private int size;
 
@@ -14,8 +14,8 @@ public class TemperatureSeriesAnalysis {
     }
 
     public TemperatureSeriesAnalysis(double[] temperatureSeries) {
-        for (double temp : temperatureSeries){
-            if (temp < minTemp){
+        for (double temp: temperatureSeries) {
+            if (temp < MIN_VALUE) {
                 throw new
                     InputMismatchException("The temperature exceeds min bound");
             }
@@ -26,19 +26,19 @@ public class TemperatureSeriesAnalysis {
     }
 
     public double average() {
-        if (size == 0){
+        if (size == 0) {
             throw new
                     IllegalArgumentException("Temperature Series is empty.");
         }
         double result = 0;
-        for (double temp: temperatureSeries){
+        for (double temp: temperatureSeries) {
             result += temp;
         }
         return result / size;
     }
 
     public double deviation() {
-        if (size == 0){
+        if (size == 0) {
             throw new
                     IllegalArgumentException("Temperature Series is empty.");
         }
@@ -51,24 +51,24 @@ public class TemperatureSeriesAnalysis {
     }
 
     public double min() {
-        if (size == 0){
+        if (size == 0) {
             throw new
                     IllegalArgumentException("Temperature Series is empty.");
         }
         double minValue = Double.POSITIVE_INFINITY;
-        for (double temp: temperatureSeries){
+        for (double temp: temperatureSeries) {
             minValue = Math.min(minValue, temp);
         }
         return minValue;
     }
 
     public double max() {
-        if (size == 0){
+        if (size == 0) {
             throw new
                     IllegalArgumentException("Temperature Series is empty.");
         }
         double maxValue = Double.NEGATIVE_INFINITY;
-        for (double temp: temperatureSeries){
+        for (double temp: temperatureSeries) {
             maxValue = Math.max(maxValue, temp);
         }
         return maxValue;
@@ -79,7 +79,7 @@ public class TemperatureSeriesAnalysis {
     }
 
     public double findTempClosestToValue(double tempValue) {
-        if (size == 0){
+        if (size == 0) {
             throw new
                     IllegalArgumentException("Temperature Series is empty.");
         }
@@ -152,9 +152,9 @@ public class TemperatureSeriesAnalysis {
                     IllegalArgumentException("Temperature Series is empty.");
         }
         for (double temp: temps){
-            if (temp < minTemp){
+            if (temp < MIN_VALUE){
                 throw new
-                        InputMismatchException("The temperature exceeds min bound.");
+                        InputMismatchException("Temperature exceeds min bound.");
             }
         }
         int length = size, summary = 0;
